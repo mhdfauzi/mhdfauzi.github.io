@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+    background-color: #dae1e7;
+    font-family: 'Lucida Sans Unicode', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav {
+    background: #142850;
+}
+
+blockquote {
+    border-left: 5px solid #27496d;
+    font-weight: bold;
+    color: #142850;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>PWA Premier League</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Progressive Web Apps yang manampilkan klasemen dan team Premier League."/>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+    <meta name="theme-color" content="#142850"/>
+  </head>
+  <body>
+  <!-- Navigasi -->
+  <nav role="navigation">
+    <div class="nav-wrapper container">
+      <a href="./index.html" class="brand-logo" id="logo-container" style="font-weight: bold; color: #dae1e7;">Premier League</a>
+      <a href="#" class="sidenav-trigger" data-target="nav-mobile">&#9776;</a>
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul class="sidenav" id="nav-mobile"></ul>
+    </div>
+  </nav>
+  <!-- Akhir Navigasi -->
+  <div class="section no-pad-bot">
+    <div class="container" id="body-content" style="display: none;"></div>
+  </div>
+
+  <div class="preloader-wrapper big active" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; margin: auto;">
+    <div class="spinner-layer" style="background-color: #142850;">
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/materialize.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/idb.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/sw.js"></script>
+  <script src="js/getTeam.js"></script>
+  <script src="js/getStanding.js"></script>
+  <script src="js/getSaved.js"></script>
+  <script src="js/preloader.js"></script>
+  </body>
+</html>
