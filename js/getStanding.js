@@ -8,7 +8,7 @@ const showStanding = data => {
                     <td>${standing.position}</td>
                     <td>
                       <a href="./team.html?id=${standing.team.id}">
-                        <img class="responsive-img" src="${standing.team.crestUrl.replace(/^http:\/\//i, 'https://')}" alt="${standing.team.name}" style="height: 30px"/>
+                        <img class="responsive-img" alt="${standing.team.name}" src="${standing.team.crestUrl.replace(/^http:\/\//i, 'https://')}" onError="this.onerror=null;this.src='/images/icons/icon-256x256.png';" style="height: 30px"/>
                       </a>
                     </td>
                     <td>

@@ -29,17 +29,6 @@ const fetchAPI = url => {
 };
 
 const getTeam = () => {
-    if ("caches" in window) {
-        caches.match(ENDPOINT_TEAM).then(response => {
-            if (response) {
-                response.json().then(data => {
-                    console.log(`Competition Data: ${data}`);
-                    showTeam(data);
-                })
-            }
-        })
-    }
-
     fetchAPI(ENDPOINT_TEAM)
         .then(data => {
             showTeam(data);
@@ -54,18 +43,6 @@ const getTeamById = () => {
         let urlParams = new URLSearchParams(window.location.search);
         let idParam = urlParams.get("id");
     
-        if ("caches" in window) {
-            caches.match(`${BASE_URL}teams/${idParam}`).then(response => {
-                if (response) {
-                    response.json().then(data => {
-                        console.log(`Team Data: ${data}`);
-                        showTeamById(data);
-                        resolve(data);
-                    })
-                }
-            })
-        }
-    
         fetchAPI(`${BASE_URL}teams/${idParam}`)
         .then(data => {
             showTeamById(data);
@@ -78,17 +55,6 @@ const getTeamById = () => {
 }
 
 const getStanding = () => {
-    if ("caches" in window) {
-        caches.match(ENDPOINT_COMPETITION).then(response => {
-            if (response) {
-                response.json().then(data => {
-                    console.log(`Standing Data: ${data}`);
-                    showStanding(data);
-                })
-            }
-        })
-    }
-
     fetchAPI(ENDPOINT_COMPETITION)
         .then(data => {
             showStanding(data);
@@ -99,17 +65,6 @@ const getStanding = () => {
 }
 
 const getScorer = () => {
-    if ("caches" in window) {
-        caches.match(`${BASE_URL}competitions/${LEAGUE_ID}/scorers`).then(response => {
-            if (response) {
-                response.json().then(data => {
-                    console.log(`Team Data: ${data}`);
-                    showScorer(data);
-                })
-            }
-        })
-    }
-
     fetchAPI(`${BASE_URL}competitions/${LEAGUE_ID}/scorers`)
     .then(data => {
         showScorer(data);

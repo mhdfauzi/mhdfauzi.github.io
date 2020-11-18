@@ -40,6 +40,7 @@ ignoreUrlParametersMatching: [/.*/]
 });
 
 workbox.routing.registerRoute(
+  new RegExp('/images/'),
   /\.(?:png|gif|jpg|jpeg|svg)$/,
   workbox.strategies.cacheFirst({
     cacheName: 'images',
@@ -60,9 +61,9 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  /^https:\/\/fonts\.googleapis\.com/,
+  /.*(?:googleapis|gstatic)\.com/,
   workbox.strategies.staleWhileRevalidate({
-    cacheName: 'material-icon',
+    cacheName: 'google-fonts-stylesheets',
   })
 );
 
@@ -72,7 +73,6 @@ workbox.routing.registerRoute(
       cacheName: 'api.football-data'
   })
 );
-
 
 self.addEventListener('notificationclick', event => {
     event.notification.close();

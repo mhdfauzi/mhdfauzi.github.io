@@ -8,7 +8,7 @@ const showTeam = data => {
             <div class="card z-depth-4" style="background-color: #00909e;">
                 <div class="row valign-wrapper">
                 <div class="col s4 center">
-                    <img src="${club.crestUrl.replace(/^http:\/\//i, 'https://')}" alt="${club.name}" class="responsive-img" style="padding: 10px 0 5px 0; height: 3rem;"/>
+                    <img class="responsive-img" alt="${club.name}" src="${club.crestUrl.replace(/^http:\/\//i, 'https://')}" onError="this.onerror=null;this.src='/images/icons/icon-256x256.png';" style="padding: 10px 0 5px 0; height: 3rem;"/>
                 </div>
                 <div class="col s8">
                     <span class="truncate white-text">${club.name}</span>
@@ -29,7 +29,7 @@ const showTeamById = data => {
     club += `
         <div class="card row border center" style="background-color: #00909e;">
         <div class="col s12 m4">
-        <img class="responsive-img" alt="${data.name}" src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" style="padding: 30px 0 10px 0; height: 100%; width: 200px;"/>
+        <img class="responsive-img" alt="${data.name}" src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" onError="this.onerror=null;this.src='/images/icons/icon-256x256.png';" style="padding: 30px 0 10px 0; height: 100%; width: 200px;"/>
         </div>
         <div class="col s12 m8 center">
         <table class="white-text">
